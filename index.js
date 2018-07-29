@@ -104,6 +104,17 @@ client.on('error', console.error);
 
 client.on('ready', () => console.log('Yo this ready!'));
 
+bot.on('ready', () => {
+    bot.user.setStatus('available')
+    bot.user.setPresence({
+        game: {
+            name: 'Hello, I am offline RN - please contact me once I am online. Thanks!',
+            type: "STREAMING",
+            url: "https://www.twitch.tv/mariolatif741"
+        }
+    });
+});
+
 client.on('disconnect', () => console.log('I just disconnected, making sure you know, I will reconnect now...'));
 
 client.on('reconnecting', () => console.log('I am reconnecting now!'));
