@@ -1,5 +1,5 @@
-# discord.js-botato
+# discord.js-marioselfbot
 
-> A Discord.js bot developed by MarioLatifFathy
+> A Discord.js self-bot developed by MarioLatifFathy
 
 **Not for copying:** No body is allowed to copy anything of this.
