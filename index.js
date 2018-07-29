@@ -104,9 +104,9 @@ client.on('error', console.error);
 
 client.on('ready', () => console.log('Yo this ready!'));
 
-bot.on('ready', () => {
-    bot.user.setStatus('available')
-    bot.user.setPresence({
+client.on('ready', () => {
+    client.user.setStatus('available')
+    client.user.setPresence({
         game: {
             name: 'Hello, I am offline RN - please contact me once I am online. Thanks!',
             type: "STREAMING",
