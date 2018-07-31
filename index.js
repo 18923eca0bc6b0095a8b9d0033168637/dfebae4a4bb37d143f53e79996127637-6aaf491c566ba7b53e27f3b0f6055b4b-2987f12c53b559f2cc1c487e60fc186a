@@ -24,10 +24,10 @@ client.on('disconnect', () => console.log('I just disconnected, making sure you 
 
 client.on('reconnecting', () => console.log('I am reconnecting now!'));
 
-client.on('msg', () => {
-  if (msg.channel.DMChannel) {
-    msg.reply("I am currently offline, please message me once I am online. Thank you!");
-  }
+client.on('msg', async message => {
+    if (message.channel.DMChannel) {
+        message.reply(" | I am currently offline, please DM me once I am online. Thank you!");
+    }
 });
 
 
