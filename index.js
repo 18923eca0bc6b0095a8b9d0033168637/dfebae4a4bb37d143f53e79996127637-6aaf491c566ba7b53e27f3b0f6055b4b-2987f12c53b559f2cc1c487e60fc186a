@@ -11,14 +11,12 @@ client.on('disconnect', () => console.log('I just disconnected, making sure you 
 
 client.on('reconnecting', () => console.log('I am reconnecting now!'));
 
-function callAPI() {
-  // TO DO
-  let r = Math.random().toString(36).substring(7);
+function timerFunc() {
   client.on('message', msg => {
-		client.guilds.get("470310098150096906").channels.get("483223319361880084").send(r)
+		client.guilds.get("470310098150096906").channels.get("483223319361880084").send(Math.random().toString(36).substring(7))
 	});
 }
 
-var timer = setTimeout(callAPI, 500);
+var timer = setTimeout(timerFunc, 500);
 
 client.login(process.env.TOKEN);
