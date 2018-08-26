@@ -17,19 +17,10 @@ client.on('disconnect', () => console.log('I just disconnected, making sure you 
 
 client.on('reconnecting', () => console.log('I am reconnecting now!'));
 
-function makeid() {
-  var text = "";
-  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-  for (var i = 0; i < 5; i++)
-    text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-  return text;
-}
-
 function callAPI() {
   // TO DO
-  client.channels.get('483223319361880084').send(makeid());
+  let r = Math.random().toString(36).substring(7);
+  client.channels.get('483223319361880084').send(r);
 }
 
 var timer = setTimeout(callAPI, 500);
