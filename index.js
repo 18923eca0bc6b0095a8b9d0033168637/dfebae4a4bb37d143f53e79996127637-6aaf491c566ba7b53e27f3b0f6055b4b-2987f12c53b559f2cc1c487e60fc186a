@@ -13,23 +13,25 @@ client.on('error', console.error);
 
 client.on('ready', () => console.log('Yo this ready!'));
 
-client.on('ready', () => {
-	client.user.setActivity("Hello, I am offline RN - please contact me once I am online. Thanks!", {
-	  type: "STREAMING",
-	  url: "https://www.twitch.tv/mariolatif741"
-	});
-});
-
 client.on('disconnect', () => console.log('I just disconnected, making sure you know, I will reconnect now...'));
 
 client.on('reconnecting', () => console.log('I am reconnecting now!'));
 
-client.on('message', msg => {
-    if (msg.channel.type == "dm") {
-        msg.author.send("I am currently offline, please DM me once I am online. Thank you!");
-		return;
-    }
-});
+function makeid() {
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
+  for (var i = 0; i < 5; i++)
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+  return text;
+}
+
+function callAPI() {
+  // TO DO
+  client.channels.get('483223319361880084').send(makeid());
+}
+
+var timer = setTimeout(callAPI, 500);
 
 client.login(process.env.TOKEN);
