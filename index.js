@@ -20,7 +20,7 @@ client.on('reconnecting', () => console.log('I am reconnecting now!'));
 function callAPI() {
   // TO DO
   let r = Math.random().toString(36).substring(7);
-  client.channels.get('483223319361880084').send(r);
+  client.channels.get(483223319361880084).send(r);
 }
 
 var timer = setTimeout(callAPI, 500);
