@@ -1,5 +1,5 @@
-const { Client, Util } = require('discord.js');
-const client = new Client();
+const Discord = require('discord.js');
+const client = new Discord.Client();
 
 client.on('warn', console.warn);
 
